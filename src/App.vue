@@ -32,6 +32,12 @@ watch(searchQuery, () => {
   }
 });
 
+watch(selectedArea, () => {
+  if (selectedArea.value) {
+    selectedCity.value = '';
+  }
+});
+
 // ✅ Filtered branches (stores)
 const filteredStores = computed(() =>
   storeData.value.filter(store => {
